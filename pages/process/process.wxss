@@ -1,0 +1,36 @@
+/* pages/process/process.wxss */
+.viewWrap {
+  min-height: 100vh;
+  border: 0px solid red;
+}
+
+.divWrap {
+  display: block;
+  height: 100%;
+  border: 0px solid red;
+  position: relative;
+}
+.divBtn {
+  display: block;
+  width: 90%;
+  height: 140px;
+  margin: 0 auto;
+  margin-top: 15px;
+  text-align: center;
+  line-height: 140px;
+  font-weight: 600;
+  color: #fff;
+  border-radius: 20px;
+}
+.one {
+  background-color: green;
+}
+.two {
+  background-color: rgb(247, 151, 8);
+}
+.three {
+  background-color: rgb(192, 0, 0);
+}
+.four {
+  background-color: rgb(0, 117, 172);
+}

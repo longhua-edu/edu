@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "button-list": "../../components/list/list"
+  },
+  "navigationBarTitleText": "选择场次"
+}

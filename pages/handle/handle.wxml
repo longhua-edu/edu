@@ -1,0 +1,9 @@
+<!--pages/handle/handle.wxml-->
+<!-- <text>pages/handle/handle.wxml</text> -->
+<view class="viewWrap">
+  <div class='divWrap'>
+    <div class='seledWrap'>
+      <button bindtap='unBind'>解除绑定</button>
+    </div>
+  </div>
+</view>

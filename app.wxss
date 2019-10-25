@@ -1,0 +1,30 @@
+/**app.wxss**/
+@import 'weui.wxss';
+.container {
+  height: 100%;
+  /* display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box; */
+  border: 0px solid red;
+}
+
+/***更改组件UI样式***/
+radio .wx-radio-input.wx-radio-input-checked {
+  background-color: #13227a;
+  border-color: #13227a;
+}
+button[type=primary] {
+  color: #fff;
+  background-color: #13227a;
+}
+.button-hover[type=primary] {
+  color: rgba(255,255,255,.6);
+  background-color: #13227a;
+}
+.button-hover {
+  color: rgba(0,0,0,.6);
+  background-color: #13227a;
+}

@@ -1,0 +1,53 @@
+<!--pages/notice/notice.wxml-->
+<!-- <text>pages/notice/notice.wxml</text> -->
+<!--pages/seledSta/seledSta.wxml-->
+<!-- <text>pages/seledSta/seledSta.wxml</text> -->
+<view class="viewWrap">
+  <div class='divWrap'>
+    <div class='seledWrap'>
+      <!-- <div class='noticeBlock'>
+        <div class='noticeCont'>
+          温馨提示：北京考点网络预报名时间截至11月5日下午4点；长春考点网络预报名时间截至11月9日下午4点；重庆考点网络预报名时间截至11月13日4点。温馨提示：北京考点网络预报名时间截至11月5日下午4点；长春考点网络预报名时间截至11月9日下午4点；重庆考点网络预报名时间截至11月13日4点。温馨提示：北京考点网络预报名时间截至11月5日下午4点；长春考点网络预报名时间截至11月9日下午4点；重庆考点网络预报名时间截至11月13日4点。温馨提示：北京考点网络预报名时间截至11月5日下午4点；长春考点网络预报名时间截至11月9日下午4点；重庆考点网络预报名时间截至11月13日4点。
+        </div>
+        <div class='noticeFot'>
+          时间: 2019-10-01
+        </div>
+      </div> -->
+
+      <!-- <div class='noticeBlock' wx:for="{{notice}}">
+        <div class='noticeCont'>
+          {{item.content}}
+        </div>
+        <div class='noticeFot'>
+          时间: {{item.edittime}}
+        </div>
+      </div>
+      <div class='seledOnce_no' wx:if="{{notice.length == 0}}">
+        暂无公告
+      </div> -->
+
+      <view class="tab">
+        <view class="btns">
+          <view wx:for="{{btns}}" class="{{index==active?'cur':''}}" data-index="{{index}}" bindtap="toggle">{{item}}</view>
+        </view>
+        <view class="cons">
+          <view wx:for="{{cons}}" class="{{index==active?'cur':''}}">
+            
+            <div class="viewList" wx:for="{{item.arrList}}" wx:for-item="listItem">
+              <div class='contBlock'>
+                {{listItem.content}}
+              </div>
+              <p class='pBlock'>
+                {{listItem.edittime}}
+              </p>
+            </div>
+            <div class='seledOnce_no' wx:if="{{item.arrList.length == 0}}">
+              暂无记录
+            </div>
+          </view>
+        </view>
+      </view>
+
+    </div>
+  </div>
+</view>

@@ -1,0 +1,69 @@
+/* pages/onDuty/onDuty.wxss */
+.viewWrap {
+  min-height: 100vh;
+  border: 0px solid red;
+}
+
+.divWrap {
+  display: block;
+  height: 100%;
+  border: 0px solid red;
+  position: relative;
+  padding: 10px;
+}
+.buttonGetWrap {
+  display: block;
+  width: 150px;
+  height: 150px;
+  margin: 20px auto;
+  background-color: #fff;
+  box-shadow: 3px 3px 2px #004898;
+  border-top: 1px solid #DEDEDE;
+  border-left: 1px solid #DEDEDE;
+  border-radius: 6px;
+}
+.buttonGetWrap image {
+  display: block;
+  width: 80px;
+  height: 80px;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+.getText {
+  display: block;
+  height: 30px;
+  max-width: 80px;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 30px;
+  color: #3F3F3F;
+  margin-top: 5px;
+}
+.ewmWrap {
+  display: block;
+  width: 100%;
+  margin-top: 10px;
+}
+.ewmCont {
+  display: block;
+  width: 92%;
+  margin: 10px auto;
+  border: 0px solid red;
+  min-height: 300px;
+  text-align: center;
+}
+.canvas {
+  border: 0px solid red;
+  width: 250px;
+  height: 250px;
+  margin: 0 auto;
+}
+.weui-demo-dialog{
+  visibility:hidden;
+  opacity:0;
+  transition:opacity .3s;
+}
+.weui-demo-dialog_show{
+  visibility:visible;
+  opacity:1;
+}

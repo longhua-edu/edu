@@ -1,0 +1,48 @@
+<view class="viewWrap">
+  <div class='divWrap'>
+    <form bindsubmit="formSubmit" bindreset="formReset">
+      
+      <view class="weui-cell" wx:for="{{stuMsgData}}" wx:key="*this">
+        <div class="titWrap" wx:if="{{item.title == 'title'}}">
+          {{item.cont}}
+        </div>
+        <view class="weui-cell__hd" wx:if="{{item.title !== 'title'}}">
+          <view class="weui-label" style="font-weight: 600;">
+            <i class='redStar' wx:if='{{item.mustFill}}'>*</i>{{item.name}}
+          </view>
+        </view>
+        <view class="weui-cell__bd" wx:if="{{item.title !== 'title'}}">
+          <input wx:if="{{item.type == 'input'}}" name="{{item.eleName}}" placeholder="请输入{{item.name}}" data-item="{{item.eleName}}" bindchange='changeOrderData' value="{{item.val}}" />
+          
+          <radio-group name='{{item.eleName}}' wx:elif="{{item.type == 'radio'}}" class="radio-group" data-item="{{item.eleName}}" bindchange="radioChange">
+            <radio class="radio" wx:for="{{item.items}}" wx:for-item="raItem" wx:key="*this" value="{{raItem.name}}" checked="{{raItem.name == item.val}}">
+              <text>{{raItem.value}}</text>
+            </radio>
+          </radio-group>
+
+          <picker wx:elif="{{item.type == 'date' && item.eleName == 'chushengriqi'}}" name='{{item.eleName}}' mode="date" value="{{curSetDate_birth}}" data-item="{{item.eleName}}" bindchange="bindDateChange">
+            <view class="picker" style="height:25px;">
+              {{curSetDate_birth}}
+            </view>
+          </picker>
+
+          <picker wx:elif="{{item.type == 'date' && item.eleName == 'biyeshijian'}}" name='{{item.eleName}}' mode="date" value="{{curSetDate_graduate}}" data-item="{{item.eleName}}" bindchange="bindDateChange1">
+            <view class="picker" style="height:25px;">
+              {{curSetDate_graduate}}
+            </view>
+          </picker>
+
+          <picker wx:elif="{{item.type == 'select'}}" bindchange="bindPickerChange" value="{{pthIndex}}" range="{{pthArray}}">
+              <!-- <button class="weui-btn" type="default">选择</button> -->
+              <input name="{{item.eleName}}" disabled="true" placeholder="请输入{{item.name}}" data-item="{{item.eleName}}" value="{{pthIndexText}}"></input>
+          </picker>
+        </view>
+      </view>
+      <view class="btn-area">
+        <button bindtap="goBack" style="margin: 10px auto; background-color: #F39800; color: #fff;width: 90%; margin: 5px auto;">上一步</button>
+        <button formType="submit" style="background-color: #16257C; color: #fff;width: 90%; margin: 5px auto;">下一步</button>
+      </view>
+    </form>
+    
+  </div>
+</view>

@@ -1,0 +1,234 @@
+<!--pages/stuMsg/stuMsg.wxml-->
+<!-- <text>pages/stuMsg/stuMsg.wxml</text> -->
+<view class="viewWrap">
+  <div class='divWrap'>
+    <form bindsubmit="formSubmit" bindreset="formReset">
+      <!-- <input name="name" placeholder="请输入姓名" /> -->
+      <!-- <view class="weui-cell ">
+        <view class="weui-cell__hd">
+          <view class="weui-label">姓名</view>
+        </view>
+        <view class="weui-cell__bd">
+          <input name="name" class="weui-input" placeholder="请输入姓名"/>
+        </view>
+      </view> -->
+      <view class="weui-cell" wx:for="{{stuMsgData}}" wx:key="*this">
+        <div class="titWrap" wx:if="{{item.title == 'title'}}">
+          {{item.cont}}
+        </div>
+        <view class="weui-cell__hd" wx:if="{{item.title !== 'title'}}">
+          <view class="weui-label">
+            <i class='redStar' wx:if='{{item.mustFill}}'>*</i>{{item.name}}
+          </view>
+        </view>
+        <view class="weui-cell__bd" wx:if="{{item.title !== 'title'}}">
+          <input wx:if="{{item.type == 'input'}}" name="{{item.eleName}}" placeholder="请输入{{item.name}}" data-item="{{item.eleName}}" bindchange='changeOrderData' value="{{item.val}}" />
+          
+          <radio-group name='{{item.eleName}}' wx:elif="{{item.type == 'radio'}}" class="radio-group" data-item="{{item.eleName}}" bindchange="radioChange">
+            <radio class="radio" wx:for="{{item.items}}" wx:for-item="raItem" wx:key="*this" value="{{raItem.name}}" checked="{{raItem.name == item.val}}">
+              <text>{{raItem.value}}</text>
+            </radio>
+          </radio-group>
+
+          <picker wx:elif="{{item.type == 'date' && item.eleName == 'chushengriqi'}}" name='{{item.eleName}}' mode="date" value="{{curSetDate_birth}}" data-item="{{item.eleName}}" bindchange="bindDateChange">
+            <view class="picker" style="height:25px;">
+              {{curSetDate_birth}}
+            </view>
+          </picker>
+
+          <picker wx:elif="{{item.type == 'date' && item.eleName == 'biyeshijian'}}" name='{{item.eleName}}' mode="date" value="{{curSetDate_graduate}}" data-item="{{item.eleName}}" bindchange="bindDateChange1">
+            <view class="picker" style="height:25px;">
+              {{curSetDate_graduate}}
+            </view>
+          </picker>
+        </view>
+      </view>
+
+      <div style="display: block;margin: 0 auto;">
+        <view class="weui-cell">
+          <div class="titWrap">
+            个人简历
+          </div>
+          <span class='addIcon' bindtap='addHandle'>
+            <image src="../../images/icon/add.png"></image>
+          </span>
+        </view>
+        
+      </div>
+      <view class="weui-cell" wx:for="{{msgExpirse}}" wx:key="{{index}}">
+        <input wx:for="{{item.arr}}" wx:key="*this" name="{{item.eleName}}" placeholder="{{item.name}}" value="{{item.val}}" />
+        <!-- <input name="msgTime" placeholder="请输入时间" />
+        <input name="msgSchool" placeholder="请输入学校" />
+        <input name="msgAcademic" placeholder="请输入学历" /> -->
+        <span class='minuteIcon' bindtap='minuteHandle' data-index="{{index}}">
+          <image src="../../images/icon/min.png"></image>
+        </span>
+      </view>
+
+      <div style="display: block;margin: 0 auto;">
+        <view class="weui-cell">
+          <div class="titWrap">
+            附件上传
+          </div>
+        </view>
+      </div>
+      <view class="weui-cell">
+        <view class="weui-cell__hd">
+          <view class="weui-label">个人登记照片</view>
+        </view>
+        <view class="weui-cell__bd">
+          <div class='uploadBox'>
+            <!-- <div class="uploadWrap" bindtap="chooseImage" wx:if="{{files.length === 0}}">
+              <div class='uploadBtn'>
+                <image class="uploadImg" src="{{src}}"></image>
+              </div>
+              <div class='uploadTxt'>
+                上传图片
+              </div>
+            </div>
+            <div class="uploadWrap" wx:else="{{files.length !== 0}}">
+              <div class='uploadBtn'>
+                <block wx:for="{{files}}" wx:key="*this">
+                  <image bindtap="previewImage" id="{{item}}" class="uploadImg" src="{{item}}" mode="aspectFill" />
+                </block>
+              </div>
+              <div class='uploadTxt'>
+                上传成功 <i style='color:red;' bindtap="reUpload"> 重传</i>
+              </div>
+            </div> -->
+            <view class="weui-uploader__files" id="uploaderFiles">
+              <block wx:if='{{filesUrlsZhaopian.length != 0}}'>
+                <view class="weui-uploader__file">
+                  <image class="weui-uploader__img" src="data:image/png;base64,{{filesUrlsZhaopian}}" mode="aspectFill" />
+
+                </view>
+              </block>
+              <block wx:for="{{files}}" wx:key="*this">
+                  <view class="weui-uploader__file" bindtap="previewImage" id="{{item}}">
+                      <image class="weui-uploader__img" src="{{item}}" mode="aspectFill" />
+                      <!-- <i style='color:red;' bindtap="delImg">删除</i> -->
+                  </view>
+              </block>
+            </view>
+            <view class="weui-uploader__input-box" wx:if='{{filesUrlsZhaopian.length == 0}}'>
+                <view class="weui-uploader__input" bindtap="chooseImage"></view>
+            </view>
+          </div>
+        </view>
+      </view>
+      <view class="weui-cell">
+        <view class="weui-cell__hd">
+          <view class="weui-label">其他照片（上传成绩单、奖学金证书、外语等级证书、生活照等）</view>
+        </view>
+        <view class="weui-cell__bd">
+          <div class='uploadBox'>
+            <!-- <div class="uploadWrap" bindtap="chooseImageOther">
+              <div class='uploadBtn'>
+                <image class="uploadImg" src="{{src}}"></image>
+              </div>
+              <div class='uploadTxt'>
+                上传图片
+              </div>
+            </div>
+            <div class="uploadWrap">
+              <div class='uploadBtn'>
+                <block wx:for="{{filesOther}}" wx:key="*this">
+                  <image bindtap="previewImageOther" id="{{item}}" class="uploadImg" src="{{item}}" mode="aspectFill" />
+                </block>
+              </div>
+              <div class='uploadTxt'>
+                上传成功
+              </div>
+            </div> -->
+            <view class="weui-uploader__files" id="uploaderFiles">
+              <block wx:if='{{filesUrlsChengjidan.length != 0}}'>
+                <view class="weui-uploader__file">
+                  <image class="weui-uploader__img" src="data:image/png;base64,{{filesUrlsChengjidan}}" mode="aspectFill" />
+                </view>
+              </block>
+              <block wx:if='{{filesUrlsJiangxuejinzhengshu.length != 0}}'>
+                <view class="weui-uploader__file">
+                  <image class="weui-uploader__img" src="data:image/png;base64,{{filesUrlsJiangxuejinzhengshu}}" mode="aspectFill" />
+                </view>
+              </block>
+              <block wx:if='{{filesUrlsWaiyuzhengshu.length != 0}}'>
+                <view class="weui-uploader__file">
+                  <image class="weui-uploader__img" src="data:image/png;base64,{{filesUrlsWaiyuzhengshu}}" mode="aspectFill" />
+                </view>
+              </block>
+              <block wx:if='{{filesUrlsQitazhengshu.length != 0}}'>
+                <view class="weui-uploader__file">
+                  <image class="weui-uploader__img" src="data:image/png;base64,{{filesUrlsQitazhengshu}}" mode="aspectFill" />
+                </view>
+              </block>
+              <block wx:if='{{filesUrlsZm_jiaoshizigezheng.length != 0}}'>
+                <view class="weui-uploader__file">
+                  <image class="weui-uploader__img" src="data:image/png;base64,{{filesUrlsZm_jiaoshizigezheng}}" mode="aspectFill" />
+                </view>
+              </block>
+              <block wx:if='{{filesUrlsZm_shenghuozhao.length != 0}}'>
+                <view class="weui-uploader__file">
+                  <image class="weui-uploader__img" src="data:image/png;base64,{{filesUrlsZm_shenghuozhao}}" mode="aspectFill" />
+                </view>
+              </block>
+              <block wx:if='{{filesUrlsZm_shenfenzheng.length != 0}}'>
+                <view class="weui-uploader__file">
+                  <image class="weui-uploader__img" src="data:image/png;base64,{{filesUrlsZm_shenfenzheng}}" mode="aspectFill" />
+                </view>
+              </block>
+              <block wx:if='{{filesUrlsZm_biyezheng.length != 0}}'>
+                <view class="weui-uploader__file">
+                  <image class="weui-uploader__img" src="data:image/png;base64,{{filesUrlsZm_biyezheng}}" mode="aspectFill" />
+                </view>
+              </block>
+              <block wx:if='{{filesUrlsZm_xueweizheng.length != 0}}'>
+                <view class="weui-uploader__file">
+                  <image class="weui-uploader__img" src="data:image/png;base64,{{filesUrlsZm_xueweizheng}}" mode="aspectFill" />
+                </view>
+              </block>
+
+              <block wx:for="{{filesOther}}" wx:key="*this">
+                  <view class="weui-uploader__file" bindtap="previewImageOther" id="{{item}}">
+                      <image class="weui-uploader__img" src="{{item}}" mode="aspectFill" />
+                      <!-- <i style='color:red;' bindtap="delImg">删除</i> -->
+                  </view>
+              </block>
+            </view>
+            <view class="weui-uploader__input-box" wx:if='{{getImgLen <= 8}}'>
+                <view class="weui-uploader__input" bindtap="chooseImageOther"></view>
+            </view>
+          </div>
+        </view>
+      </view>
+
+      <view class="btn-area">
+        <button type="primary" formType="submit">提交个人信息</button>
+        <!-- <button formType="reset">Reset</button> -->
+      </view>
+    </form>
+    <view class="weui-demo-dialog {{istrue ? 'weui-demo-dialog_show' : ''}}">
+      <view class="weui-mask" bindtap="closeDialog"></view>
+      <view class="weui-dialog__wrp" bindtap="closeDialog">
+          <view class="weui-dialog" catchtap="stopEvent">
+            <view class="weui-dialog__hd">
+              <view class="weui-dialog__title">图片类型</view>
+            </view>
+            <view class="weui-dialog__bd">
+              <!-- <image class="weui-article__img" src="../images/pic_article.png" mode="aspectFill" style="max-width:100%;"/> -->
+              <div class='listDialog'>
+                <radio-group class="radio-group" bindchange="radioChangeType">
+                  <radio class="radio myRadioStyle" wx:for-items="{{imgTypeItems}}" wx:key="type" value="{{item.type}}" checked="{{item.checked}}">
+                    <text class="textStyle">{{item.mingcheng}}</text>
+                  </radio>
+                </radio-group>
+              </div>
+            </view>
+            <view class="weui-dialog__ft">
+                <view class="weui-dialog__btn weui-dialog__btn_default" bindtap="closeDialog">取消</view>
+                <view class="weui-dialog__btn" bindtap="closeDialog_confirm">确定</view>
+            </view>
+          </view>
+      </view>
+    </view>
+  </div>
+</view>

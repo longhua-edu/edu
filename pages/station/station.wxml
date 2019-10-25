@@ -1,0 +1,21 @@
+<!--pages/station/station.wxml-->
+<!-- <text>pages/station/station.wxml</text> -->
+<view class="viewWrap">
+  <div class='divWrap'>
+    <div class='searchInp'>
+      <input type="text" placeholder="请输入岗位信息" bindinput="searchVal0"></input>
+      <span bindtap='searchVal'>搜索</span>
+    </div>
+    <div class='listWrap'>
+      <radio-group class="radio-group" bindchange="radioChange">
+        <!-- <radio class="radio myRadioStyle" wx:for-items="{{stationItems}}" wx:key="bianhao" value="{{item.bianhao}}" checked="{{item.checked}}"> -->
+        <radio class="radio myRadioStyle" wx:for="{{stationItems}}" wx:key="bianhao" value="{{item.mingcheng}}" checked="{{item.checked}}">
+          <text class="textStyle {{item.tips == true ? 'tx' : ''}}">{{item.mingcheng}}</text>
+        </radio>
+      </radio-group>
+    </div>
+    <div class='confirmBtn'>
+      <button type='primary' bindtap='confirmSelSat'>确认选择此岗位</button><!--提交的时候要带上oenid 个人资料 场次 岗位信息-->
+    </div>
+  </div>
+</view>

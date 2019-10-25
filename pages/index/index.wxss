@@ -1,0 +1,246 @@
+/**index.wxss**/
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid red;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.usermotto {
+  margin-top: 200px;
+}
+
+.bannerWrap {
+  display: block;
+  width: 100%;
+  height: 160px;
+  border: 0px solid red;
+}
+
+.selWrap {
+  display: block;
+  width: 92%;
+  margin: 10px auto;
+  border: 0px solid red;
+}
+.header {
+  display: block;
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  color: #666;
+  font-size: 18px;
+}
+.contWrap {
+  display: block;
+  width: 100%;
+  border: 0px solid #ddd;
+  text-align: center;
+  color: #333;
+  font-weight: 600;
+}
+.contT {
+  display: block;
+  width: 100%;
+  height: 80px;
+  border-bottom: 0px solid #ddd;
+  line-height: 80px;
+  margin-bottom: 12px;
+}
+.contTL {
+  display: inline-block;
+  width: 48%;
+  height: 80px;
+  box-sizing: border-box;
+  float: left;
+  padding-top: 15px;
+  /* background-color: rgba(0, 81, 255, 0.247);
+  background: radial-gradient(#fff, rgba(0, 81, 255, 0.247)); */
+  box-shadow: 3px 3px 2px #004898;
+}
+.blockBorder {
+  border-top: 1px solid #DEDEDE;
+  border-left: 1px solid #DEDEDE;
+  border-radius: 6px;
+  color: #4A4A4A;
+}
+.cCWrap {
+  display: inline-block;
+  width: 100%;
+  height: 50px;
+  box-sizing: border-box;
+  border: 0px solid red;
+  text-align: center;
+}
+.cCL {
+  display: flex;
+  width: 30%;
+  height: 100%;
+  box-sizing: border-box;
+  float: left;
+  border: 0px solid red;
+  align-items: center;
+  justify-content: center;
+
+}
+.cCL image {
+  display: inline-block;
+  border: 0px solid red;
+  width: 50%;
+  height: 50%;
+}
+.cCR {
+  display: inline-block;
+  width: 70%;
+  height: 100%;
+  box-sizing: border-box;
+  float: left;
+  border: 0px solid red;
+  line-height: 50px;
+  text-align: left;
+}
+.contTR {
+  display: inline-block;
+  width: 48%;
+  height: 80px;
+  box-sizing: border-box;
+  float: right;
+  padding-top: 15px;
+  /* background-color: rgba(255, 217, 0, 0.247);
+  background: radial-gradient(#fff, rgba(255, 217, 0, 0.247)); */
+  box-shadow: 3px 3px 2px #004898;
+}
+.contB {
+  display: block;
+  width: 100%;
+  height: 80px;
+  line-height: 80px;
+}
+.contBL {
+  display: inline-block;
+  width: 48%;
+  height: 80px;
+  box-sizing: border-box;
+  float: left;
+  padding-top: 15px;
+  /* background-color: rgba(255, 217, 0, 0.247);
+  background: radial-gradient(#fff, rgba(255, 217, 0, 0.247)); */
+  box-shadow: 3px 3px 2px #004898;
+}
+.contBR {
+  display: inline-block;
+  width: 48%;
+  height: 80px;
+  box-sizing: border-box;
+  float: right;
+  padding-top: 15px;
+  /* background-color: rgba(0, 81, 255, 0.247);
+  background: radial-gradient(#fff, rgba(0, 81, 255, 0.247)); */
+  box-shadow: 3px 3px 2px #004898;
+}
+.selwrapLine {
+  display: inline-block;
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  border-bottom: 1px solid #ddd;
+}
+.selwrapLineL {
+  display: inline-block;
+  height: 100%;
+  max-width: 200px;
+  float: left;
+  text-align: left;
+  color: #666;
+  border: 0px solid red;
+  white-space: nowrap;
+  overflow: auto;
+}
+.selwrapLineR {
+  display: inline-block;
+  height: 100%;
+  float: right;
+  text-align: left;
+  color: #333;
+}
+
+.swiperStyle {
+  border: 0px solid red;
+}
+.imgDiv {
+  border: 0px solid red;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.imgDiv image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+.le-img {
+  width: 100%;
+  display: block;
+  transform: scale(0.9);
+  transition: all 0.3s ease;
+  border-radius: 6px;
+}
+.le-img.le-active {
+  transform: scale(1);
+}
+.imgText {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 10;
+  color: #fff;
+}
+.imgTextL {
+  display: inline-block;
+  width: 50%;
+  height: 100%;
+}
+.imgTextR {
+  display: inline-block;
+  width: 50%;
+  height: 100%;
+}
+.blockP {
+  display: block;
+  white-space: nowrap;
+  overflow: auto;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  font-size: 14px;
+  padding-left: 20px;
+}
+.blockPBlock {
+  display: block;
+  max-height: 60%;
+  overflow: auto;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  font-size: 14px;
+  padding-left: 20px;
+} 

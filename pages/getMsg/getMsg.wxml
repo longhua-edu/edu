@@ -1,0 +1,179 @@
+<!--pages/getMsg/getMsg.wxml-->
+<!-- <text>pages/getMsg/getMsg.wxml</text> -->
+<view class="getMsgWrap">
+  <!-- <div class='uploadBox'>
+    <div class="uploadWrap" bindtap="chooseImage" wx:if="{{files.length === 0}}">
+      <div class='uploadBtn'>
+        <image class="uploadImg" src="{{src}}"></image>
+      </div>
+      <div class='uploadTxt'>
+        上传图片
+      </div>
+    </div>
+    <div class="uploadWrap" wx:else="{{files.length !== 0}}">
+      <div class='uploadBtn'>
+        <block wx:for="{{files}}" wx:key="*this">
+          <image bindtap="previewImage" id="{{item}}" class="uploadImg" src="{{item}}" mode="aspectFill" />
+        </block>
+      </div>
+      <div class='uploadTxt'>
+        上传成功
+      </div>
+    </div>
+  </div> -->
+  <view class="weui-cells__title" style="color: #1D2B80;">请填写个人信息</view>
+  <view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell ">
+      <view class="weui-cell__hd">
+        <view class="weui-label">姓名</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input class="weui-input" placeholder="请输入姓名" bindinput="iptVal_name" />
+      </view>
+    </view>
+    <!-- <view class="weui-cell ">
+      <view class="weui-cell__hd">
+        <view class="weui-label">性别</view>
+      </view>
+      <view class="weui-cell__bd">
+        <radio-group name="radio-group" bindchange="iptVal_sex">
+          <label><radio value="man"/>男</label>
+          <label><radio value="woman"/>女</label>
+        </radio-group>
+      </view>
+    </view> -->
+    
+    <view class="weui-cell ">
+      <view class="weui-cell__hd">
+        <view class="weui-label">身份证号</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input class="weui-input" placeholder="请输入身份证号" bindinput="iptVal_idCard"/>
+      </view>
+    </view>
+    <view class="weui-cell ">
+      <view class="weui-cell__hd">
+        <view class="weui-label">qq号</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input class="weui-input" placeholder="请输入qq号" bindinput="iptVal_qq"/>
+      </view>
+    </view>
+    <view class="weui-cell ">
+      <view class="weui-cell__hd">
+        <view class="weui-label">手机号</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input class="weui-input" placeholder="请输入手机号" bindinput="iptVal_mbphone"/>
+      </view>
+    </view>
+    <!-- <view class="weui-cell ">
+      <view class="weui-cell__hd">
+        <view class="weui-label">角色</view>
+      </view>
+      <view class="weui-cell__bd">
+        <radio-group name='juese' class="radio-group" bindchange="iptVal_js">
+          <radio class="radio" value="0">
+            <text>学生</text>
+          </radio>
+          <radio class="radio" value="1">
+            <text>老师</text>
+          </radio>
+        </radio-group>
+      </view>
+    </view> -->
+    <!-- <view class="weui-cell ">
+      <view class="weui-cell__hd">
+        <view class="weui-label">民族</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input class="weui-input" placeholder="请输入民族" bindinput="iptVal_nation"/>
+      </view>
+    </view> -->
+    <!-- <view class="weui-cell  weui-cell_vcode">
+      <view class="weui-cell__hd">
+        <view class="weui-label">手机号</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input class="weui-input" placeholder="请输入手机号" />
+      </view>
+      <view class="weui-cell__ft">
+        <view class="weui-vcode-btn">获取验证码</view>
+      </view>
+    </view> -->
+    <!-- <view class="weui-cell ">
+      <view class="weui-cell__hd">
+        <view class="weui-label">出生日期</view>
+      </view>
+      <view class="weui-cell__bd">
+        <picker mode="date" value="{{birthDate}}" bindchange="bindBirthDateChange">
+          <view class="weui-input">{{birthDate}}</view>
+        </picker>
+      </view>
+    </view>
+    <view class="weui-cell ">
+      <view class="weui-cell__hd">
+        <view class="weui-label">生源地</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input class="weui-input" placeholder="请输入生源地" bindinput="iptVal_from" />
+      </view>
+    </view>
+    <view class="weui-cell ">
+      <view class="weui-cell__hd">
+        <view class="weui-label">籍贯</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input class="weui-input" placeholder="请输入籍贯" bindinput="iptVal_home" />
+      </view>
+    </view>
+    <view class="weui-cell ">
+      <view class="weui-cell__hd">
+        <view class="weui-label">政治面貌</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input class="weui-input" placeholder="请输入政治面貌" bindinput="iptVal_party" />
+      </view>
+    </view>
+    <view class="weui-cell ">
+      <view class="weui-cell__hd">
+        <view class="weui-label">毕业时间</view>
+      </view>
+      <view class="weui-cell__bd">
+        <picker mode="date" value="{{graduDate}}" bindchange="bindgraduDateChange">
+          <view class="weui-input">{{graduDate}}</view>
+        </picker>
+      </view>
+    </view> -->
+    <!-- <view class="weui-cell ">
+      <view class="weui-cell__hd">
+        <view class="weui-label">时间</view>
+      </view>
+      <view class="weui-cell__bd">
+        <picker mode="time" value="{{time}}" start="09:01" end="21:01" bindchange="bindTimeChange">
+          <view class="weui-input">{{time}}</view>
+        </picker>
+      </view>
+    </view> -->
+    <!-- <view class="weui-cell  weui-cell_vcode">
+      <view class="weui-cell__hd">
+        <view class="weui-label">验证码</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input class="weui-input" placeholder="请输入验证码" />
+      </view>
+      <view class="weui-cell__ft">
+        <image class="weui-vcode-img" src="../images/vcode.jpg" style="width: 108px"></image>
+      </view>
+    </view> -->
+    <!-- <button bindtap='getScancode'>扫一扫</button>
+    <view wx:if="{{result !=''}}">
+      <view>扫码的内容:{{result}}</view>
+    </view> -->
+    
+  </view>
+  <view class="weui-cells__tips" style="color: #1D2B80; margin-bottom: 10px;">请仔细输入个人信息</view>
+  <div class='btnWrap'>
+    <button class="weui-btn" type="primary" bindtap="confirmTo">确定</button>
+  </div>
+</view>

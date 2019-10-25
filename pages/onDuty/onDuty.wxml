@@ -1,0 +1,57 @@
+<!--pages/onDuty/onDuty.wxml-->
+<!-- <text>pages/onDuty/onDuty.wxml</text> -->
+<view class="viewWrap">
+  <div class='divWrap'>
+    <!-- <button bindtap='getScancode'>扫码签到</button>
+    <view wx:if="{{result !=''}}">
+      <view>扫码的内容:{{result}}</view>
+    </view>
+
+    <div class='ewmWrap'>
+      <button bindtap='tapHandler'>生成二维码</button>
+      <div class='ewmCont'>
+        <span>
+          二维码展示区域
+        </span>
+        <canvas class='canvas' canvas-id='canvas' bindlongtap='save'></canvas>
+      </div>
+    </div> -->
+    
+    <div class='buttonGetWrap' bindtap='getScancode'>
+      <image src="../../images/bg/duty/1.png"></image>
+      <div class='getText'>
+        扫码签到
+      </div>
+    </div>
+
+    <view wx:if="{{result !=''}}">
+      <view>扫码的内容:{{result}}</view>
+    </view>
+
+    <div class='buttonGetWrap' bindtap='tapHandler'>
+      <image src="../../images/bg/duty/2.png"></image>
+      <div class='getText'>
+        生成二维码
+      </div>
+    </div>
+
+    <view class="weui-demo-dialog {{istrue ? 'weui-demo-dialog_show' : ''}}">
+      <view class="weui-mask" bindtap="closeDialog"></view>
+      <view class="weui-dialog__wrp" bindtap="closeDialog">
+          <view class="weui-dialog" catchtap="stopEvent">
+            <view class="weui-dialog__hd">
+              <view class="weui-dialog__title">二维码展示区域</view>
+            </view>
+            <view class="weui-dialog__bd">
+              <!-- <image class="weui-article__img" src="../images/pic_article.png" mode="aspectFill" style="max-width:100%;"/> -->
+              <canvas wx:if='{{istrue}}' class='canvas' canvas-id='canvas' bindlongtap='save'></canvas>
+            </view>
+            <view class="weui-dialog__ft">
+                <view class="weui-dialog__btn weui-dialog__btn_default" bindtap="closeDialog">取消</view>
+                <view class="weui-dialog__btn" bindtap="closeDialog">确定</view>
+            </view>
+          </view>
+      </view>
+    </view>
+  </div>
+</view>

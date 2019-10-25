@@ -1,0 +1,149 @@
+<!--index.wxml-->
+<view class="container">
+  <!-- <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <!-- <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image> -->
+      <!-- <image bindtap="bindTextTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname" bindtap="bindTextTap">{{userInfo.nickName}}</text>
+    </block>
+  </view> --> 
+  <!-- <view class="usermotto">
+    <text class="user-motto">{{motto}},{{userInfo.nickName}}</text>
+  </view>
+  <button type='primary' bindtap='getOpenid'>获取用户openid</button>
+  <text>openid: {{openid}}</text>
+
+  <button type='primary' bindtap='toProcess'>跳转流程选择页面</button> -->
+  <div class='bannerWrap'>
+    <swiper indicator-dots="{{indicatorDots}}"
+      autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" style="width:100%; height: 100%;">
+      <block wx:for="{{imgUrls}}" wx:key="*this" style="width: 100%; height: 100%;">
+        <swiper-item style="width: 100%; height:100%; background: linear-gradient(#0050A0, #095BAA);">
+          <image src="{{item}}" class="slide-image" style="display:block;height: 100%; margin: 0 auto;"/>
+        </swiper-item>
+      </block>
+    </swiper>
+  </div>
+  <div class='selWrap'>
+    <!-- <div class='header'>
+      我要参加报考
+    </div> -->
+    <div class='contWrap'>
+      <div class='contT'>
+        <div class='contTL blockBorder' bindtap='toEditMsg'>
+          <div class='cCWrap'>
+            <div class='cCL'>
+              <image src="../../images/icon/index/3.png"></image>
+            </div>
+            <div class='cCR'>
+              完善个人信息
+            </div>
+          </div>
+        </div>
+        <div class='contTR blockBorder' bindtap='toSelPlay'>
+          <div class='cCWrap'>
+            <div class='cCL'>
+              <image src="../../images/icon/index/4.png"></image>
+            </div>
+            <div class='cCR'>
+              选择场次
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class='contB'>
+        <div class='contBL blockBorder' bindtap='toSeeStation'>
+          <div class='cCWrap'>
+            <div class='cCL'>
+              <image src="../../images/icon/index/1.png"></image>
+            </div>
+            <div class='cCR'>
+              查看已选岗位
+            </div>
+          </div>
+        </div>
+        <div class='contBR blockBorder' bindtap='toOnDuty'>
+          <div class='cCWrap'>
+            <div class='cCL'>
+              <image src="../../images/icon/index/2.png"></image>
+            </div>
+            <div class='cCR'>
+              签到
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- <div class='selWrap'>
+    <text style="color: #666">教育之于心灵，犹雕刻之于大理石。</text>
+  </div> -->
+  <div class='selWrap'>
+    <!-- <div class='selwrapLine'>
+      <div class='selwrapLineL'>
+        审核状态：
+      </div>
+      <div class='selwrapLineR'>
+        已通过
+      </div>
+    </div> 
+    <div class='selwrapLine'>
+      <div class='selwrapLineL'>
+        场次1-岗位1
+      </div>
+      <div class='selwrapLineR'>
+        审核已通过
+      </div>
+    </div> -->
+    <!-- <div class='selwrapLine' wx:for="{{staList}}">
+      <div class='selwrapLineL'>
+        {{item.kaodian}}-{{item.mingcheng}}
+      </div>
+      <div class='selwrapLineR'>
+        审核已通过
+      </div>
+    </div> -->
+    <!-- <div class='selwrapLine'>
+      <div class='selwrapLineL'>
+        顺序号：
+      </div>
+      <div class='selwrapLineR'>
+        001
+      </div>
+      <div bindtap='gogogog'>
+        gogogo
+      </div>
+      
+    </div> -->
+  </div>
+  <div class='selWrap' style='margin-top: 20px;'>
+    <swiper class="swiperStyle" previous-margin='25px' next-margin='25px' bindchange="swiperChange" indicator-dots="{{indicatorDots2}}" style='height:{{swiperH}};'>
+      <swiper-item wx:for='{{imgList}}' wx:key=''>
+        <div class="imgDiv">
+          <image class='le-img {{nowIdx==index?"le-active":""}}' bindload='getHeight' src='../../images/icon/index/5.png' style='height:{{swiperH}};'></image>
+          <div class='imgText le-img {{nowIdx==index?"le-active":""}}'>
+            <div class='imgTextL'>
+              <p class='blockP'>场次</p>
+              <p class='blockP'>{{item.kaodian}}</p>
+              <p class='blockP'>审核状态</p>
+              <p class='blockP' wx:if='{{item.tongguochushen == 0}}'>审核中</p>
+              <p class='blockP' wx:if='{{item.tongguochushen == 1}}'>通过</p>
+              <p class='blockP' wx:if='{{item.tongguochushen == 2}}'>未通过</p>
+            </div>
+            <div class='imgTextR'>
+              <p class='blockP'>岗位</p>
+              <p class='blockPBlock'>{{item.mingcheng}}</p>
+              
+            </div>
+          </div>
+        </div>
+        
+      </swiper-item>
+    </swiper>
+  </div>
+  <!-- <div class='selWrap'>
+    <button bindtap='unBind'>解除绑定</button>
+  </div> -->
+  
+</view>

@@ -1,0 +1,16 @@
+/* pages/handle/handle.wxss */
+.viewWrap {
+  min-height: 100vh;
+  border: 0px solid red;
+}
+.divWrap {
+  display: block;
+  height: 100%;
+  border: 0px solid red;
+  position: relative;
+}
+.seledWrap {
+  display: block;
+  width: 92%;
+  margin: 0 auto;
+}

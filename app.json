@@ -1,0 +1,58 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/getMsg/getMsg",
+    "pages/process/process",
+    "pages/stuMsg/stuMsg",
+    "pages/stuMsg1/stuMsg1",
+    "pages/stuMsg2/stuMsg2",
+    "pages/stuMsg3/stuMsg3",
+    "pages/stuMsg4/stuMsg4",
+    "pages/stuMsg5/stuMsg5",
+    "pages/plays/plays",
+    "pages/station/station",
+    "pages/seledSta/seledSta",
+    "pages/onDuty/onDuty",
+    "pages/msgList/msgList",
+    "pages/notice/notice",
+    "pages/handle/handle",
+    "pages/teacherIndex/teacherIndex",
+    "pages/teacherPlays/teacherPlays"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#a9b7b7",
+    "selectedColor": "#13227A",
+    "borderStyle": "white",
+    "list": [
+      {
+        "selectedIconPath": "images/icon/bottomNav/sy_act.png",
+        "iconPath": "images/icon/bottomNav/sy.png",
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      }, {
+        "selectedIconPath": "images/icon/bottomNav/xx_act.png",
+        "iconPath": "images/icon/bottomNav/xx.png",
+        "pagePath": "pages/msgList/msgList",
+        "text": "个人信息"
+      }, {
+        "selectedIconPath": "images/icon/bottomNav/gg_act.png",
+        "iconPath": "images/icon/bottomNav/gg.png",
+        "pagePath": "pages/notice/notice",
+        "text": "公告"
+      }, {
+        "selectedIconPath": "images/icon/bottomNav/cz_act.png",
+        "iconPath": "images/icon/bottomNav/cz.png",
+        "pagePath": "pages/handle/handle",
+        "text": "操作"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

@@ -1,0 +1,202 @@
+/* pages/stuMsg4/stuMsg4.wxss */
+.viewWrap {
+  min-height: 100vh;
+  border: 0px solid red;
+}
+
+.divWrap {
+  display: block;
+  height: 100%;
+  border: 0px solid red;
+  position: relative;
+}
+
+.titWrap {
+  display: block;
+  width: 90%;
+  color: #16247B;
+  font-size: 14px;
+  margin: 5px auto;
+  border: 0px solid red;
+}
+.fontSty {
+  font-size: 18px;
+  color: #171717;
+}
+.iconR {
+  display: block;
+  width: 26px;
+  height: 26px;
+  border: 0px solid red;
+  float: right;
+}
+.iconR image {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.listWrap {
+  display: block;
+  width: 90%;
+  margin: 5px auto;
+  border: 0px solid red;
+}
+.once {
+  display: block;
+  width: 100%;
+  margin: 10px auto;
+  border: 0px solid red;
+  position: relative;
+  border-radius: 6px;
+  background-color: #fff;
+  box-shadow: 3px 3px 2px #004898;
+  border-top: 1px solid #DEDEDE;
+  border-left: 1px solid #DEDEDE;
+}
+.onceIn {
+  display: inline-block;
+  width: 96%;
+  height: 25px;
+  margin: 0 auto;
+  border: 0px solid red;
+}
+.t {
+  display: inline-block;
+  height: 25px;
+  float: left;
+  font-size: 14px;
+  color: #999;
+  line-height: 25px;
+}
+.b {
+  display: inline-block;
+  max-width: 74%;
+  height: 25px;
+  line-height: 25px;
+  white-space: nowrap;
+  overflow: auto;
+  float: left;
+  border: 0px solid red;
+  padding-left: 4px;
+  color: #333;
+}
+.minutesSty {
+  display: inline-block;
+  width: 26px;
+  height: 26px;
+  border: 0px solid red;
+  position: absolute;
+  right: 0px;
+  top: 1px;
+}
+.minutesSty image {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.weui-demo-dialog{
+  visibility:hidden;
+  opacity:0;
+  transition:opacity .3s;
+}
+.weui-demo-dialog_show{
+  visibility:visible;
+  opacity:1;
+}
+.divForm {
+  display: block;
+  width: 100%;
+
+  border: 0px solid red;
+}
+.inputOnce {
+  display: block;
+  width: 100%;
+  height: 30px;
+  margin: 5px auto;
+  text-align: left;
+  border: 0px solid red;
+  line-height: 30px;
+  color: #2C2C2C;
+  font-size: 14px;
+}
+.inputOnce input{
+  display: inline-block;
+  max-width: 62%;
+  height: 100%;
+  float: right;
+  color: #C4C4C4;
+  font-size: 14px;
+}
+
+.newOnce {
+  display: block;
+  width: 100%;
+  margin: 10px auto;
+  border: 0px solid red;
+  position: relative;
+  border-radius: 6px;
+  background-color: #fff;
+}
+
+.lineOnce {
+  display: block;
+  width: 100%;
+  border-bottom: 1px solid #ddd;
+}
+.ntop {
+  display: block;
+  width: 100%;
+  height: 30px;
+  line-height: 30px;
+}
+.ntopL {
+  display: inline-block;
+  box-sizing: border-box;
+  height: 30px;
+  float: left;
+  border: 0px solid red;
+  font-weight: 600;
+  color: #333;
+  max-width: 60%; 
+  white-space: nowrap;
+  overflow: auto;
+}
+.ntopR {
+  display: inline-block;
+  box-sizing: border-box;
+  height: 30px;
+  float: right;
+  border: 0px solid red;
+  color: #666;
+  font-size: 14px;
+  max-width: 40%;
+  white-space: nowrap;
+  overflow: auto;
+}
+.nbottom {
+  display: block;
+  width: 100%;
+  height: 30px;
+  line-height: 30px;
+}
+.nbr {
+  display: inline-block;
+  height: 26px;
+  width: 26px;
+  margin-top: 2px;
+}
+.nbl {
+  color: #999;
+  font-weight: 100;
+  font-size: 14px;
+  max-width: 60%;
+  white-space: nowrap;
+  overflow: auto;
+}
+.ntopR image {
+  display: block;
+  width: 100%;
+  height: 100%;
+}

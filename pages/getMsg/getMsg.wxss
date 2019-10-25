@@ -1,0 +1,43 @@
+/* pages/getMsg/getMsg.wxss */
+.getMsgWrap {
+  position: relative;
+  height: 100vh;
+}
+.uploadBox {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+.uploadWrap {
+  display: block;
+  width: 100px;
+  text-align: center;
+  margin: 0 auto;
+}
+.uploadBtn {
+  display: block;
+  width: 100px;
+  background-color: #eee;
+  height: 100px;
+}
+.uploadImg {
+  display: block;
+  width: 60px;
+  height: 60px;
+  margin: 0 auto;
+  padding-top: 20px; 
+}
+.uploadTxt {
+  display: block;
+  width: 100px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+}
+.btnWrap {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 50px;
+  bottom: 0;
+}

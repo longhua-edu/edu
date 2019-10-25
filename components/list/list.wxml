@@ -1,0 +1,7 @@
+<!--components/button-list/button-list.wxml-->
+<view class='button-list' bindtap='buttonClick'>
+  <image mode="widthFix" wx:if="{{img}}" src='{{img}}'></image>
+  <text>{{text}}</text>
+  <text style="display:none">{{ccid}}</text>
+  <image wx:if="{{!hideRight}}" class='button-right' src='../../images/icon/enter.png'></image>
+</view>

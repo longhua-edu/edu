@@ -1,0 +1,41 @@
+<!--pages/msgList/msgList.wxml-->
+<!-- <text>pages/msgList/msgList.wxml</text> -->
+<view class="viewWrap">
+  <div class='divWrap'>
+    <div class='banner'>
+      <div class='photoWrap'>
+        <image src="../../images/icon/index/5.png"></image>
+      </div>
+      <div class='photoText'>{{myName}}</div>
+    </div>
+    <div class='listWrap'>
+      
+      <!-- <div class='listOnce' wx:for="{{userList}}" wx:key="*this">
+        <div class='icon'>
+          <image src="{{item.src}}"></image>
+        </div>
+        <div class='right'>
+          <div class='title'>
+            {{item.title}}
+          </div>
+          <div class='cont'>
+            {{item.cont}}
+          </div>
+        </div>
+      </div> -->
+      <div class='listOnce' wx:for="{{userList}}" wx:key="*this">
+        <div class='icon'>
+          <image src="{{item.src}}"></image>
+        </div>
+        <div class='right'>
+          <div class='title'>
+            {{item.title}}
+          </div>
+          <div class='cont'>
+            {{item.cont}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+ </view>

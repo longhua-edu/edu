@@ -1,0 +1,17 @@
+<!--pages/plays/plays.wxml-->
+<view class="viewWrap">
+  <div class='divWrap'>
+    <button-list
+      bind:myevent="buttonClick"
+      wx:for="{{listArr}}"
+      wx:key="*this"
+      text="{{item.kaodian}}"
+      img="../../images/icon/plays/1.png"
+      ccid='{{item.id}}'
+    ></button-list>
+    <!-- <div class='loadMore'>
+      {{moredata}}
+    </div> -->
+    <div wx:if="{{boolCc}}">暂无场次信息</div>
+  </div>
+</view>

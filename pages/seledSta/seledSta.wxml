@@ -1,0 +1,72 @@
+<!--pages/seledSta/seledSta.wxml-->
+<!-- <text>pages/seledSta/seledSta.wxml</text> -->
+<view class="viewWrap">
+  <div class='divWrap'>
+    <div class='seledWrap'>
+
+      <!-- <div class='seledOnce' wx:for="{{staList}}" wx:key="*this">
+        <div class='leftWrap'>
+          <div class="leftT">
+            {{item.kaodian}}-{{item.mingcheng}}
+          </div>
+          <div class="leftB">
+            初审状态：{{item.tongguochushen}}
+          </div>
+        </div>
+        <div class='rightWrap' data-gangweiid='{{item.gangweiID}}' data-changciid='{{item.changciID}}' data-tongguochushen='{{item.tongguochushen}}' bindtap='updateStation'>
+          修改岗位
+        </div>
+        <div class='rightWrap2' data-lineid='{{item.lineid}}' bindtap='delThis'>
+          删除
+        </div>
+      </div> -->
+      
+      <div class='seledOnce' wx:for="{{staList}}" wx:key="*this">
+        <div class='seledCenter'>
+          <div class='one'>
+            <div class='oneL'>
+              场次：
+            </div>
+            <div class='oneR'>
+              {{item.kaodian}}
+            </div>
+          </div>
+          <div class='one'>
+            <div class='oneL'>
+              岗位：
+            </div>
+            <div class='oneR'>
+              {{item.mingcheng}}
+            </div>
+          </div>
+          <div class='two'>
+            <div class='twoL green' wx:if="{{item.tongguochushen == 1}}">
+              <!--{{item.tongguochushen}}-->
+              审核通过
+            </div>
+            <div class='twoL yellow' wx:if="{{item.tongguochushen == 0}}">
+              <!--{{item.tongguochushen}}-->
+              审核中
+            </div>
+            <div class='twoL red' wx:if="{{item.tongguochushen == 2}}">
+              <!--{{item.tongguochushen}}-->
+              审核失败
+            </div>
+            <div class='twoR' data-gangweiid='{{item.gangweiID}}' data-changciid='{{item.changciID}}' data-tongguochushen='{{item.tongguochushen}}' bindtap='updateStation'>
+              <image src="../../images/icon/seled/1.png"></image>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class='seledOnce_no' wx:if="{{staList.length == 0}}">
+        暂无数据
+      </div>
+    </div>
+    <!-- <div class='seledWrap'>
+      <button type='primary' bindtap='confirmSelSatAll'>确认提交</button>
+      <text>当提交完并且成功后 确认提交按钮消失， 展示已提交。还没提交或者提交失败，就展示确认提交按钮。</text>
+      <button type='default'>已提交</button>
+    </div> -->
+  </div>
+</view>

@@ -1,0 +1,18 @@
+<!--pages/process/process.wxml-->
+<!-- <text>pages/process/process.wxml</text> -->
+<view class="viewWrap">
+  <div class='divWrap'>
+    <div class='divBtn one' bindtap='toEditMsg'>
+      编辑个人信息
+    </div>
+    <div class='divBtn two' bindtap='toSelPlay'>
+      选择场次
+    </div>
+    <div class='divBtn three' bindtap='toSeeStation'>
+      查看已选岗位
+    </div>
+    <div class='divBtn four' bindtap='toOnDuty'>
+      签到
+    </div>
+  </div>
+</view>

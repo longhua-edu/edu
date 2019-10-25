@@ -1,0 +1,108 @@
+<!--pages/stuMsg4/stuMsg4.wxml-->
+<!-- <text>pages/stuMsg4/stuMsg4.wxml</text> -->
+<view class="viewWrap">
+  <div class='divWrap'>
+    <div class="titWrap hSty">
+      教育背景与工作经验
+    </div>
+    <div class="titWrap fontSty">
+      个人简历
+      <div class='iconR' bindtap="hanAdd">
+        <image src="../../images/icon/add.png"></image>
+      </div>
+    </div>
+    <div class='listWrap'>
+      <!-- <div class='once'>
+        <div class='onceIn one'>
+          <div class='t'>时间</div>
+          <div class='b'>11</div>
+        </div>
+        <div class='onceIn two'>
+          <div class='t'>学校/单位</div>
+          <div class='b'>22</div>
+        </div>
+        <div class='onceIn three'>
+          <div class='t'>职位</div>
+          <div class='b'>33</div>
+        </div>
+        <div class='minutesSty'>
+          <image src="../../images/icon/minus.png"></image>
+        </div>
+      </div> -->
+      <!--jianli1_zhiwu:-->
+      <!-- <div class='once' wx:for='{{arrList}}' wx:for-index='index'>
+        <div class='onceIn one'>
+          <div class='t'>时间:</div>
+          <div class='b'>{{item['jianli' + (index + 1) + '_shijian']}}</div>
+        </div>
+        <div class='onceIn two'>
+          <div class='t'>学校/单位:</div>
+          <div class='b'>{{item['jianli' + (index + 1) + '_xuexi']}}</div>
+        </div>
+        <div class='onceIn three'>
+          <div class='t'>职位:</div>
+          <div class='b'>{{item['jianli' + (index + 1) + '_zhiwu']}}</div>
+        </div>
+        <div class='minutesSty' data-index="{{index}}" bindtap='hanMinus'>
+          <image src="../../images/icon/minus.png"></image>
+        </div>
+      </div> -->
+
+      <div class='newOnce' wx:for='{{arrList}}' wx:for-index='index'>
+        <div class='lineOnce'>
+          <div class='ntop'>
+            <div class='ntopL'>
+              {{item['jianli' + (index + 1) + '_xuexi']}}
+            </div>
+            <div class='ntopR'>
+              {{item['jianli' + (index + 1) + '_shijian']}}
+            </div>
+          </div>
+          <div class='nbottom'>
+            <div class='ntopL nbl'>
+              {{item['jianli' + (index + 1) + '_zhiwu']}}
+            </div>
+            <div class='ntopR nbr' data-index="{{index}}" bindtap='hanMinus'>
+              <image src="../../images/icon/minus.png"></image>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+
+    <view class="btn-area">
+      <button bindtap="goBack" style="margin: 10px auto; background-color: #F39800; color: #fff;width: 90%; margin: 5px auto;">上一步</button>
+      <!-- <button bindtap="goNext" style="background-color: #16257C; color: #fff;width: 90%; margin: 5px auto;">下一步</button> -->
+      <button bindtap="confirmSubmit" formType="submit" style="background-color: #16257C; color: #fff;width: 90%; margin: 5px auto;">确认提交</button>
+    </view>
+
+    <view class="weui-demo-dialog {{istrue ? 'weui-demo-dialog_show' : ''}}">
+      <view class="weui-mask" bindtap="closeDialog"></view>
+      <view class="weui-dialog__wrp" bindtap="closeDialog">
+          <view class="weui-dialog" catchtap="stopEvent">
+            <view class="weui-dialog__hd">
+              <view class="weui-dialog__title">添加个人简历</view>
+            </view>
+            <view class="weui-dialog__bd">
+              <div class='divForm'>
+                <div class='inputOnce'>
+                  时间：<input type="text" placeholder="请输入时间" value="{{time}}" bindinput='changeTime' />
+                </div>
+                <div class='inputOnce'>
+                  学校/单位：<input type="text" placeholder="请输入学校/单位名称" value="{{depart}}" bindinput='changeDepart' />
+                </div>
+                <div class='inputOnce'>
+                  职位：<input type="text" placeholder="请输入职位" value="{{work}}" bindinput='changeWork' />
+                </div>
+              </div>
+            </view>
+            <view class="weui-dialog__ft">
+                <view class="weui-dialog__btn weui-dialog__btn_default" bindtap="closeDialog">取消</view>
+                <view class="weui-dialog__btn" bindtap="confirmDia">确定</view>
+            </view>
+          </view>
+      </view>
+    </view>
+  </div>
+</view>
